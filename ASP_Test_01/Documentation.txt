@@ -1,0 +1,53 @@
+
+2. As the project is small, I didn't find the scope to use the GOF design pattern in my project, but I have implemented two design patterns.
+
+3. I have used solid principles in my project.
+	I ] I have created classes and functions that are based on the first rule of the SOLID principle,
+	which is the Single Responsibility Principle (SRP).
+	According to this rule, the classes and functions I have created have only one responsibility.
+
+	II ] The classes and functions which I have created are open for extension but closed for modification.
+	This is the second rule of SOLID principle I have used.
+
+	III ] The interfaces which I have created in my project are not forcing the class which inherited it.
+	Here we are using the 4th principle Interface Segregation Principle (ISP).
+
+	IV ] I have added dependency injection to my project, which results in loose coupling between classes.
+	Also writing test cases are easy with DI.
+	This indicates the 5th principle Dependency Inversion Principle (DIP).
+
+	Why solid principles are important ?
+	These SOLID principles, when applied properly, can lead to cleaner, more maintainable, and more extensible
+	code by reducing coupling and improving code organization. They are often used as 
+	a guideline for good software design practices.
+
+
+4.I have written all the test cases for the controller functions and BookRepository class functions.
+
+BooksController Test cases : 
+		
+	I ]  Return all the books on get request (GetAllBooks_ReturnsOkResultWithBooks)
+	I have created here dummy data with 2 records on request I return those records with 200 response.
+	So here in test I'm checking response code and number of records in dummy data and records get by reponse is matching or not.
+
+	II ] Add book in database( AddBook_ReturnsCreatedResultWithBook)
+	After adding the book to database here Im testing the response which im expecting 201.
+	Also I have written test cases which inssure that at a time only one record should be added.
+	You can check this test case on UnitTest1 class and BookControllerTest cases class
+	API_Repository_GetMethod_And_AddMethod_Test
+
+	III ] Delete Records (DeleteRecord_ExistingBook_ReturnsOkResult) (DeleteRecord_NonExistingBook_ReturnsNotFoundResult)
+	For deleting records we have created two test cases first one if record is found in data base and second one is if records
+	is not in database.
+	In test cases we are expecting if recotd is found we will delete that record and send 200 response and I have to check record is deleted.
+	In case 2 if record is not found then we will send response as 404.
+
+	III ] Update Record (UpdateRecord_ExistingBook_ReturnsOkResult) UnitTest1 (API_Repository_UpdateMethod_Test)
+	For updating records we have two cases 
+	1.Record is found : 
+	If recotd is found then we are checking the response from function is mathcing with the record that we have replaced.
+	2.Record not found.
+	Here we are sending repnse code 404 .
+
+
+
